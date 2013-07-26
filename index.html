@@ -12,21 +12,19 @@
     <title>easyloader</title>
 </head>
 <body>
-<form action="http://estore.wiscom.com.cn/baseSelect/jsonp.do" method="post">
-    <br>
+<br>
 
-    <input type="text" id="autocomp"/>
+<input type="text" id="autocomp"/>
 
-    <br>
-    <br>
-    <input type="text" id="local2"/>
+<br>
+<br>
+<input type="text" id="local2"/>
 
-    <br>
-    <br>
-    <input type="text" id="local3" class="auto" name="local3"/>
+<br>
+<br>
+<input type="text" id="local3" class="auto" name="local3"/>
 
-    <input type="submit" value="提交"/>
-</form>
+<input type="submit" value="提交"/>
 
 <!--jquery核心文件-->
 <script src="lovey/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -43,7 +41,7 @@
     easyloader.extPluginsName = "a";
 
     $(document).ready(function () {
-        using(["autocomplete","aautocomplete"], function () {
+        using(["autocomplete", "aautocomplete"], function () {
 
             // 本地字符串数组
             var availableTags = [
