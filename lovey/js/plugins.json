@@ -1,0 +1,27 @@
+[
+    {
+        "moduleName": "uiwidget",
+        "modeulCnName": "widget公用",
+        "moduleDependencies": "plugins/jquery.ui.widget.js"
+    },
+    {
+        "moduleName": "jqueryui",
+        "modeulCnName": "JqueryUI框架公用",
+        "moduleDependencies": ["plugins/jquery.ui.core.js", "uiwidget"]
+    },
+    {
+        "moduleName": "json2js",
+        "modeulCnName": "Json2JS",
+        "moduleDependencies": "plugins/grid/json2.js"
+    },
+    {
+        "moduleName": "autocomplete",
+        "moduleCss": "autocomplete.css",
+        "modeulCnName": "自动补全",
+        "moduleDependencies": [
+            "jqueryui",
+            "plugins/autocomplete/autocomplete.js",
+            "plugins/autocomplete/position.js"
+        ]
+    }
+]
