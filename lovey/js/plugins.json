@@ -1,5 +1,10 @@
 [
     {
+        "moduleName": "ligeruibase",
+        "modeulCnName": "ligerUI核心文件",
+        "moduleDependencies": "plugins/ligerui/js/core/base.js"
+    },
+    {
         "moduleName": "uiwidget",
         "modeulCnName": "widget公用",
         "moduleDependencies": "plugins/jquery.ui.widget.js"
@@ -12,7 +17,7 @@
     {
         "moduleName": "json2js",
         "modeulCnName": "Json2JS",
-        "moduleDependencies": "plugins/grid/json2.js"
+        "moduleDependencies": "plugins/json2.js"
     },
     {
         "moduleName": "autocomplete",
@@ -23,5 +28,130 @@
             "plugins/autocomplete/autocomplete.js",
             "plugins/autocomplete/position.js"
         ]
+    },
+    {
+        "moduleName": "drag",
+        "modeulCnName": "拖动",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerDrag.js"]
+    },
+    {
+        "moduleName": "dialog",
+        "modeulCnName": "对话框",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerDialog.js"]
+    },
+    {
+        "moduleName": "accrdion",
+        "modeulCnName": "抽屉",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerAccordion.js"]
+    },
+    {
+        "moduleName": "button",
+        "modeulCnName": "按钮",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerButton.js"]
+    },
+    {
+        "moduleName": "checkbox",
+        "modeulCnName": "单选",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerCheckBox.js"]
+    },
+    {
+        "moduleName": "combobox",
+        "modeulCnName": "单选",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerComboBox.js"]
+    },
+    {
+        "moduleName": "dateeditor",
+        "modeulCnName": "单选",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerDateEditor.js"]
+    },
+    {
+        "moduleName": "dateeditor",
+        "modeulCnName": "单选",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerDateEditor.js"]
+    },
+    {
+        "moduleName": "easytab",
+        "modeulCnName": "单选",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerEasyTab.js"]
+    },
+    {
+        "moduleName": "filter",
+        "modeulCnName": "过滤",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerFilter.js"]
+    },
+    {
+        "moduleName": "form",
+        "modeulCnName": "表单",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerForm.js"]
+    },
+    {
+        "moduleName": "grid",
+        "modeulCnName": "表格",
+        "moduleDependencies": ["ligeruibase", "json2js", "plugins/ligerui/js/plugins/ligerGrid.js"]
+    },
+    {
+        "moduleName": "menu",
+        "modeulCnName": "菜单",
+        "moduleDependencies": ["ligeruibase", "json2js", "plugins/ligerui/js/plugins/ligerMenu.js"]
+    },
+    {
+        "moduleName": "layout",
+        "modeulCnName": "布局",
+        "moduleDependencies": ["ligeruibase", "json2js", "plugins/ligerui/js/plugins/ligerLayout.js"]
+    },
+    {
+        "moduleName": "menubar",
+        "modeulCnName": "菜单条",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerMenuBar.js"]
+    },
+    {
+        "moduleName": "messagebox",
+        "modeulCnName": "工具条",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerMessageBox.js"]
+    },
+    {
+        "moduleName": "radio",
+        "modeulCnName": "单选框",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerRadio.js"]
+    },
+    {
+        "moduleName": "resizable",
+        "modeulCnName": "大小调整",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerResizable.js"]
+    },
+    {
+        "moduleName": "spinner",
+        "modeulCnName": "调整器",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerSpinner.js"]
+    },
+    {
+        "moduleName": "tab",
+        "modeulCnName": "标签",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerTab.js"]
+    },
+    {
+        "moduleName": "textbox",
+        "modeulCnName": "文本框",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerTextBox.js"]
+    },
+    {
+        "moduleName": "ligertip",
+        "modeulCnName": "tips提示",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerTip.js"]
+    },
+    {
+        "moduleName": "toolbar",
+        "modeulCnName": "工具条",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerToolBar.js"]
+    },
+    {
+        "moduleName": "tree",
+        "modeulCnName": "树",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerTree.js"]
+    },
+    {
+        "moduleName": "window",
+        "modeulCnName": "窗体",
+        "moduleDependencies": ["ligeruibase", "plugins/ligerui/js/plugins/ligerWindow.js"]
     }
 ]

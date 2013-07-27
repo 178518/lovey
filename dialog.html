@@ -8,25 +8,22 @@
     <meta name="author" content="178518(at)gmail.com,赵云"/>
     <meta content="easyloader" name="keywords">
     <meta content="easyloader" name="description"/>
+    <link href="lovey/js/plugins/ligerui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
     <title>对话框</title>
 </head>
 <body>
 
 <!--jquery核心文件-->
 <script src="lovey/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<!--外部插件-->
-<script src="lovey/js/extplugins.js" type="text/javascript"></script>
-<script type="text/javascript">
-    //定制化插件的加载声明
-    pluginloader.defPlugins = "a";
-</script>
 <!--懒加载核心js文件-->
 <script src="lovey/js/easyloader.js" type="text/javascript"></script>
 <script type="text/javascript">
 
     $(document).ready(function () {
-        using("dialog", function () {
-
+        using(["dialog","drag","accrdion"], function () {
+            $.ligerDialog.open({
+                "url":"http://www.baidu.com"
+            })
         });
     });
 </script>

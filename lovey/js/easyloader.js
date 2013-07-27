@@ -7,6 +7,7 @@
  * Copyright 2010 stworthy [ stworthy@gmail.com ]
  *
  * Edit by yzhao [178518@gmail.com]
+ * QQ:497014281
  *
  */
 (function ($) {
@@ -154,11 +155,12 @@
         var jsStatus = 'loading';
         //如果允许css,并且plugin有css,则加载css,否则设置加载过了，其实是不加载
         var cssStatus = 'loaded';
-        var themeCcsStatus = 'loaded';
+        var themeCcsStatus = (easyloader.theme != "") ? "loading" : "loaded";
 
         if (module != undefined) {
             cssStatus = (easyloader.css && module['css']) ? 'loading' : 'loaded';
         }
+
         var cssUrl = "";
         var jsUrl = "";
 
@@ -167,6 +169,14 @@
             if (easyloader.css && module['css']) {
                 if (/^http/i.test(module['css'])) {
                     cssUrl = module['css'];
+                } else if (/^([\w*-?]+[\/][\w*-?]+)*(\.css)$/i.test(module['css']) && !/^http/i.test(module['css'])) {
+                    //匹配 abc/abac-_/a.css的样式文件，路径相对于lovey
+                    cssUrl = easyloader.extPluginsRoot + module['css'];
+
+                    //启用min模式，http加载不关注
+                    if (easyloader.minMode) {
+                        cssUrl = doUrl(cssUrl, ".css");
+                    }
                 } else if (module['moduleExt'] != undefined && module['moduleExt'] == true) {
                     //如果是项目自己开发的插件
                     cssUrl = easyloader.extPluginsRoot + module['extPluginsFolder'] + easyloader.splitStr + module['extPluginsName'] + easyloader.splitStr
@@ -191,17 +201,18 @@
                     cssUrl += "?v=" + new Date().getTime();
                 }
 
-                loadCss(cssUrl, function () {
-                    cssStatus = 'loaded';
-                    //js， css加载完，才调用回调
-                    if (jsStatus == 'loaded' && cssStatus == 'loaded') {
-                        finish();
-                    }
-                });
+                if (cssUrl != "") {
+                    loadCss(cssUrl, function () {
+                        cssStatus = 'loaded';
+                        //js， css加载完，才调用回调
+                        if (jsStatus == 'loaded' && cssStatus == 'loaded') {
+                            finish();
+                        }
+                    });
+                }
 
                 //必须等待组件的样式加载完成
                 if (cssStatus == "loaded" && easyloader.theme != "") {
-                    themeCcsStatus = 'loaded';
 
                     var themeUrl = easyloader.base + "/themes/" + easyloader.theme + easyloader.splitStr + easyloader.theme + ".css";
 
@@ -210,7 +221,13 @@
                         themeUrl = doUrl(themeUrl, ".css");
                     }
 
-                    loadCss(themeUrl);
+                    loadCss(themeUrl, function () {
+                        themeCcsStatus = 'loaded';
+                        //js， css加载完，才调用回调
+                        if (jsStatus == 'loaded' && cssStatus == 'loaded' && themeCcsStatus == 'loaded') {
+                            finish();
+                        }
+                    });
                 }
             }
         }
